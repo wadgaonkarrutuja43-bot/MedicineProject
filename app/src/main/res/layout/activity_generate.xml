@@ -1,0 +1,101 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F9F9FB"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/back_to_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Back to Home"
+        android:textColor="#6B5BFF"
+        android:textSize="14sp"
+        android:paddingBottom="16dp"
+        android:clickable="true"
+        android:focusable="true" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Generate a New Code"
+        android:textColor="#5746E7"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:paddingBottom="32dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_white_background"
+        android:padding="20dp"
+        android:elevation="4dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_vertical">
+
+        <EditText
+            android:id="@+id/input_tablet_name"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Tablet Name"
+            android:inputType="text"
+            android:background="@drawable/input_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#7667F0"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/input_batch_no"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Batch No."
+            android:inputType="text"
+            android:background="@drawable/input_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#7667F0"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/input_mfg_date"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Mfg Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="text"
+            android:background="@drawable/input_background"
+            android:paddingHorizontal="16dp"
+            android:layout_marginBottom="16dp"
+            android:textColor="#7667F0"
+            android:textSize="16sp" />
+
+        <EditText
+            android:id="@+id/input_expiry_date"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:hint="Expiry Date"
+            android:focusable="false"
+            android:clickable="true"
+            android:inputType="text"
+            android:background="@drawable/input_background"
+            android:paddingHorizontal="16dp"
+            android:textColor="#7667F0"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_generate_code"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Generate Code"
+        android:textColor="#FFFFFF"
+        android:textSize="18sp"
+        android:backgroundTint="#6827DB"
+        android:elevation="6dp"/>
+</LinearLayout>

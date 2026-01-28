@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F5F7FB"
+    android:padding="16dp">
+
+  <TextView
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="SCAN A QR CODE"
+      android:textColor="#8855E2"
+      android:textSize="30sp"
+      android:textStyle="bold"
+      android:layout_marginTop="20dp" />
+
+  <com.journeyapps.barcodescanner.DecoratedBarcodeView
+      android:id="@+id/barcode_scanner"
+      android:layout_width="match_parent"
+      android:layout_height="400dp"
+      android:layout_marginTop="20dp"
+      android:visibility="gone" />
+
+  <!-- Buttons -->
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:orientation="horizontal"
+      android:gravity="center"
+      android:layout_marginTop="20dp"
+      android:weightSum="2">
+
+    <Button
+        android:id="@+id/btn_start_scan"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Start Scanning"
+        android:textColorHint="@color/btn_color"
+        android:layout_marginEnd="8dp"
+        android:backgroundTint="#6827DB"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_cancel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Cancel"
+        android:layout_marginStart="8dp"
+        android:backgroundTint="#6827DB"
+        android:textColor="@android:color/white" />
+
+  </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="#F5F7FB"
+    tools:context=".MainActivity">
+
+    <!-- Gradient Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@drawable/header_gradient">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="SCANNED"
+            android:textColor="#5E0CF0"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="The all-in-one scanner"
+            android:textColor="#825EC3"
+            android:textSize="16sp"
+            android:layout_marginTop="3dp" />
+    </LinearLayout>
+
+    <!-- Card Section -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-60dp"
+        android:layout_marginHorizontal="24dp"
+        android:layout_marginBottom="24dp"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="8dp"
+        android:backgroundTint="@android:color/white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp"
+            android:gravity="center_horizontal">
+
+            <!-- QR Icon -->
+
+            <ImageView
+                android:layout_width="72dp"
+                android:layout_height="72dp"
+                android:src="@drawable/ic_qr_code"
+                android:elevation="6dp"
+                android:padding="16dp"
+                android:layout_marginTop="-48dp"
+                android:layout_gravity="center"
+                android:contentDescription="QR Icon" />
+
+         <!-- Title -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Verification Hub"
+                android:textColor="#5E0CF0"
+                android:textStyle="bold"
+                android:textSize="20sp"
+                android:layout_marginTop="24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Choose an option below"
+                android:textSize="14sp"
+                android:textColor="#A682E6"
+                android:layout_marginTop="4dp" />
+
+            <!-- Button Grid -->
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2"
+                android:alignmentMode="alignMargins"
+                android:layout_marginTop="24dp"
+                android:rowCount="2"
+                android:columnOrderPreserved="false"
+                android:useDefaultMargins="true">
+
+                <Button
+                    android:id="@+id/btn_generate"
+                    style="@style/DashboardButton"
+                    android:text="Generate"
+                    app:icon="@drawable/ic_add" />
+
+                <Button
+                    android:id="@+id/btn_scan"
+                    style="@style/DashboardButton"
+                    android:text="Scan"
+                    app:icon="@drawable/ic_camera" />
+
+                <Button
+                    android:id="@+id/btn_history"
+                    style="@style/DashboardButton"
+                    android:text="History"
+                    app:icon="@drawable/ic_history" />
+
+                <Button
+                    android:id="@+id/btn_about"
+                    style="@style/DashboardButton"
+                    android:text="About"
+                    app:icon="@drawable/ic_info" />
+            </GridLayout>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+</LinearLayout>

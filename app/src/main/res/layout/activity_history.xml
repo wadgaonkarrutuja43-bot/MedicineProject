@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="16dp"
+    android:background="#F5F7FB">
+
+    <!-- Title for History -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:textColor="#8855E2"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginTop="20dp"
+        android:gravity="center" />
+
+    <!-- Button to show Scanned QR History -->
+    <Button
+        android:id="@+id/btn_scanned_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Scanned QR History"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#6827DB"
+        />
+
+    <!-- Button to show Generated QR History -->
+    <Button
+        android:id="@+id/btn_generated_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Show Generated QR History"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#6827DB"/>
+
+    <!-- RecyclerView to display the QR history -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_history"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:visibility="gone" />
+
+    <!-- Back Button -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Back"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#6827DB"
+        android:textColor="@android:color/white"/>
+
+</LinearLayout>

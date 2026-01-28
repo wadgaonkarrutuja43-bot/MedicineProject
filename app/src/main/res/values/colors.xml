@@ -1,0 +1,13 @@
+<resources>
+    <!-- App Theme Colors -->
+    <color name="colorPrimary">#60a5fa</color>
+    <color name="colorPrimaryDark">#3b82f6</color>
+    <color name="colorAccent">#c084fc</color>
+
+    <!-- UI Element Colors -->
+    <color name="button_background_color">#f3e8ff</color> <!-- A light violet -->
+    <color name="icon_tint_color">#8b5cf6</color> <!-- A medium violet -->
+    <color name="white">#FFFFFFFF</color>
+    <color name="black">#FF000000</color>
+    <color name="btn_color">#C262EB</color>
+</resources>

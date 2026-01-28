@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    android:background="#F5F7FB">
+
+    <!-- Title for Scanned QR Code -->
+    <TextView
+        android:id="@+id/tv_result_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scanned QR Code"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:textColor="@color/colorPrimaryDark"
+        android:layout_marginTop="50dp"/>
+
+    <!-- QR Code content display -->
+    <TextView
+        android:id="@+id/tv_qr_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="QR Code content will appear here"
+        android:textSize="18sp"
+        android:textColor="#555"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:padding="16dp"
+        android:background="@drawable/rounded_border"/>
+
+    <!-- Spacer to add some margin -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="30dp"/>
+
+    <!-- Button to scan another QR Code -->
+    <Button
+        android:id="@+id/btn_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Scan Another QR"
+        android:textColor="@android:color/white"
+        android:background="@drawable/button_bg"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:layout_marginTop="40dp"
+        android:textSize="16sp"
+        android:elevation="8dp"/>
+
+</LinearLayout>

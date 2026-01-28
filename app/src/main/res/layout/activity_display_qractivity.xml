@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="#F9F9FB"
+    android:padding="24dp">
+
+    <ImageView
+        android:id="@+id/qr_image"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:contentDescription="Generated QR"
+        android:layout_marginBottom="32dp" />
+
+    <Button
+        android:id="@+id/btn_save_qr"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Save to Gallery"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#6827DB"
+        android:layout_marginBottom="16dp" />
+
+    <Button
+        android:id="@+id/btn_cancel_qr"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Cancel"
+        android:textColor="@color/white"
+        android:backgroundTint="#6827DB" />
+
+</LinearLayout>
