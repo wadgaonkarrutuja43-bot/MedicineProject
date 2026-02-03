@@ -15,8 +15,9 @@ import java.util.List;
 public class HistoryActivity extends AppCompatActivity {
 
     private RecyclerView rvHistory;
-    public HistoryAdapter historyAdapter;
+    private HistoryAdapter historyAdapter;
     private List<History> historyList;
+
     private Button btnScannedHistory, btnGeneratedHistory, btnBack;
 
     @Override
@@ -29,67 +30,66 @@ public class HistoryActivity extends AppCompatActivity {
         btnGeneratedHistory = findViewById(R.id.btn_generated_history);
         btnBack = findViewById(R.id.btn_back);
 
-        // Set up RecyclerView
         rvHistory.setLayoutManager(new LinearLayoutManager(this));
 
         // Load all history by default
         loadHistory("all");
 
-        // Button for showing scanned history
         btnScannedHistory.setOnClickListener(v -> loadHistory("scanned"));
 
-        // Button for showing generated history
         btnGeneratedHistory.setOnClickListener(v -> loadHistory("generated"));
 
-        // Back button
         btnBack.setOnClickListener(v -> finish());
     }
 
-    private void loadHistory(String type) {
-        historyList = getHistoryFromPreferences(); // Retrieve all history
+    private void loadHistory(String filterType) {
+        historyList = getHistoryFromPreferences();
 
-        // Filter the history if needed (scanned or generated)
-        if (!type.equals("all")) {
-            List<History> filteredHistory = new ArrayList<>();
+        if (!filterType.equals("all")) {
+            List<History> filteredList = new ArrayList<>();
+
             for (History history : historyList) {
-                if (history.getType().equalsIgnoreCase(type)) {
-                    filteredHistory.add(history);
+
+                // ✅ Scanned = camera OR gallery
+                if (filterType.equals("scanned")) {
+                    if (history.getType().equalsIgnoreCase("camera")
+                            || history.getType().equalsIgnoreCase("gallery")
+                            || history.getType().equalsIgnoreCase("scanned")) {
+                        filteredList.add(history);
+                    }
+                }
+
+                // ✅ Generated
+                else if (filterType.equals("generated")
+                        && history.getType().equalsIgnoreCase("generated")) {
+                    filteredList.add(history);
                 }
             }
-            historyList = filteredHistory;
+
+            historyList = filteredList;
         }
 
-        // Set adapter for RecyclerView
         historyAdapter = new HistoryAdapter(this, historyList);
         rvHistory.setAdapter(historyAdapter);
 
-        // Show RecyclerView when data is available
-        if (!historyList.isEmpty()) {
-            rvHistory.setVisibility(View.VISIBLE);
-        } else {
-            rvHistory.setVisibility(View.GONE);
-        }
+        rvHistory.setVisibility(historyList.isEmpty() ? View.GONE : View.VISIBLE);
     }
 
     private List<History> getHistoryFromPreferences() {
-        List<History> historyList = new ArrayList<>();
+        List<History> list = new ArrayList<>();
 
-        // Retrieve the history data from SharedPreferences
-        SharedPreferences sharedPreferences = getSharedPreferences("QR_HISTORY", MODE_PRIVATE);
-        int historySize = sharedPreferences.getInt("history_size", 0);  // Get the number of saved history entries
+        SharedPreferences prefs = getSharedPreferences("QR_HISTORY", MODE_PRIVATE);
+        int historySize = prefs.getInt("history_size", 0);
 
-        // Iterate over all saved history entries and load them into the historyList
         for (int i = 0; i < historySize; i++) {
-            String qrContent = sharedPreferences.getString("qr_content_" + i, "");
-            String type = sharedPreferences.getString("type_" + i, "");
-            long timestamp = sharedPreferences.getLong("timestamp_" + i, 0);
+            String qrContent = prefs.getString("qr_content_" + i, "");
+            String type = prefs.getString("type_" + i, "");
+            long timestamp = prefs.getLong("timestamp_" + i, 0);
 
             if (!qrContent.isEmpty()) {
-                History history = new History(qrContent, type, timestamp);
-                historyList.add(history);
+                list.add(new History(qrContent, type, timestamp));
             }
         }
-
-        return historyList;
+        return list;
     }
 }

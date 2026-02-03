@@ -30,16 +30,24 @@
       android:orientation="horizontal"
       android:gravity="center"
       android:layout_marginTop="20dp"
-      android:weightSum="2">
+      android:weightSum="3">
 
     <Button
         android:id="@+id/btn_start_scan"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:text="Start Scanning"
-        android:textColorHint="@color/btn_color"
-        android:layout_marginEnd="8dp"
+        android:text="Scan"
+        android:backgroundTint="#6827DB"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/btn_gallery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Gallery"
+        android:layout_marginHorizontal="8dp"
         android:backgroundTint="#6827DB"
         android:textColor="@android:color/white" />
 
@@ -49,7 +57,6 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:text="Cancel"
-        android:layout_marginStart="8dp"
         android:backgroundTint="#6827DB"
         android:textColor="@android:color/white" />
 
